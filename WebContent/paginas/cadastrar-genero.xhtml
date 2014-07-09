@@ -5,20 +5,13 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:cc="http://java.sun.com/jsf/composite/componentes">
 	<ui:composition template="/templates/main-template.xhtml">
 		<ui:define name="content">
 			<h:form>
-				<p:panelGrid columns="2">
-		Descricao:
-		<p:inputText value="#{generoBean.genero.descricao}" />
-					<p:commandButton value="Limpar" type="reset" />
-					<p:commandButton value="Salvar" action="#{generoBean.salvar}"
-						update=":msg" />
-				</p:panelGrid>
+				<cc:formularioCD value="#{cdBean.cd}" acao="create" />
 			</h:form>
-			<br />
-			<h:link outcome="menu" value="Voltar"/>
 		</ui:define>
 	</ui:composition>
 </html>
